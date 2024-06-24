@@ -832,7 +832,7 @@ namespace ArabicStemmer
                                                                                         //System.out.println( "read in files successfully" );
                                                                                     }
 
-            StringBuilder stemmedWord = new StringBuilder("j");
+            StringBuilder stemmedWord = new StringBuilder("");
             // check if the middle letter is a waw
             if (staticFiles[8].Contains(word))
             {
