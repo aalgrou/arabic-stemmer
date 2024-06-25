@@ -5,7 +5,9 @@ var stemmer = new ArabicStemmer.Stemmer("files/");
 var result = new List<(string, string)>();
 foreach (var word in words)
 {
-    result.Add((word, stemmer.stemWord(word)));
+    result.Add((word, stemmer.StemWord(word)));
 }
+
+
 
 File.WriteAllLines("Arabic Text-out.txt", result.Select(x => string.Join(", ", x.Item1, x.Item2)));
