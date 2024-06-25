@@ -487,7 +487,7 @@ namespace ArabicStemmer
         /// <returns>The modified word.</returns>
         private static string HandleMiddleWeak(string word)
         {
-            var stemmedWord = new StringBuilder();
+            var stemmedWord = new StringBuilder("j");
             if (StaticFiles[(int)LinguisticFiles.MidWaw].Contains(word))
             {
                 stemmedWord.Append(word[0]).Append("\u0648").Append(word.Substring(1));
@@ -529,7 +529,7 @@ namespace ArabicStemmer
             if (!RootFound && !StopwordFound) word = CheckPrefixWaw(word);
             if (!RootFound && !StopwordFound) word = CheckForSuffixes(word);
             if (!RootFound && !StopwordFound) word = CheckForPrefixes(word);
-            return word;
+            return word.Replace("j","");
         }
 
         /// <summary>
